@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'quiz.dart';
 import 'package:flutter/services.dart';
+import 'welcome.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,15 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GiveHero',
-      home: QuizPage(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -42,24 +40,52 @@ class _MyHomePageState extends State<MyHomePage> {
 */
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text("GiveHero"),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        child: Stack(
           children: <Widget>[
-
+            Container(
+              height: 950,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/welcome1.png"),
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Positioned(
+              top: 490,
+              bottom: 200,
+              left: 70,
+              right: 70,
+              child: SizedBox(
+                width: 300,
+                height: 50,
+                child: RaisedButton(
+                  color: Color(0xFF0000A1),
+                  elevation: 26.0,
+                  shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(40.0)),
+                  child: Text("Continue",style:  GoogleFonts.ebGaramond(
+                    color: Color(0xFFF8E6C5),
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w700,
+                  )),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                          builder: (BuildContext context) => WelcomePage()
+                      ),
+                    );
+                  },
+                ),
+              ),
+            )
           ],
         ),
       ),

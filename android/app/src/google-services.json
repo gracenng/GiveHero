@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "844191277597",
+    "firebase_url": "https://givehero-7fdbd.firebaseio.com",
+    "project_id": "givehero-7fdbd",
+    "storage_bucket": "givehero-7fdbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844191277597:android:cc846646f47a7895c95cf4",
+        "android_client_info": {
+          "package_name": "com.example.givehero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844191277597-vgp09o7ov2bquhm5k8q2l0m0qhdajurp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6rYVx1ETIaYO7m0S0KirxohDjqGP_2kM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844191277597-vgp09o7ov2bquhm5k8q2l0m0qhdajurp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
