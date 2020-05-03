@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'quiz.dart';
 import 'package:flutter/services.dart';
 import 'welcome.dart';
+import 'payment.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,8 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Positioned(
-              top: 490,
-              bottom: 200,
+              top: 503,
+              bottom: 195,
               left: 70,
               right: 70,
               child: SizedBox(

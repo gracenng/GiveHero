@@ -9,6 +9,7 @@ class WelcomePage extends StatefulWidget {
   _WelcomePage createState() => _WelcomePage();
 }
 class _WelcomePage extends State<WelcomePage> {
+
   SizedBox scroll (String text1, String text2,String text3){
     return SizedBox(
         width:500,
@@ -20,7 +21,7 @@ class _WelcomePage extends State<WelcomePage> {
             Container(
               child: Text(text1,
                   style: GoogleFonts.ebGaramond(
-                    color: Color(0xFFF8E6C5),
+                    color: Color(0xFF0000A1),
                     fontSize: 25.0,
                     fontWeight: FontWeight.w700,
                   )),
@@ -42,14 +43,6 @@ class _WelcomePage extends State<WelcomePage> {
                     fontWeight: FontWeight.w700,
                   )),
             ),
-            Container(
-              child: Text("UNICEF ",
-                  style: GoogleFonts.ebGaramond(
-                    color: Color(0xFF0000A1),
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w700,
-                  )),
-            ),
           ],
         ),
       );
@@ -58,6 +51,7 @@ class _WelcomePage extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ));
@@ -80,34 +74,34 @@ class _WelcomePage extends State<WelcomePage> {
                 Positioned(
                   top: 280,
                   bottom: 390,
-                  left: 70,
-                  right: 70,
-                  child: scroll("UNICEF  ", "UNICEF  ","UNICEF  "),
+                  left: 60,
+                  right: 60,
+                  child: scroll("Doctors Without Borders | ", "Save the Children | ","Natural Resources Defense Council | "),
                 ),
                 Positioned(
                   top: 330,
                   bottom: 340,
-                  left: 70,
-                  right: 70,
-                  child: scroll("UNICEF  ", "UNICEF  ","UNICEF  "),
+                  left: 60,
+                  right: 60,
+                  child: scroll("Direct Relief  |", "Red Cross | ","Mission Partners International "),
                 ),
                 Positioned(
                   top: 380,
                   bottom: 290,
-                  left: 70,
-                  right: 70,
-                  child: scroll("UNICEF  ", "UNICEF  ","UNICEF  "),
+                  left: 60,
+                  right: 60,
+                  child: scroll("UNICEF  |", "Action Against Hunger | ","Humane Society International "),
                 ),
                 Positioned(
                   top: 430,
                   bottom: 240,
-                  left: 70,
-                  right: 70,
-                  child: scroll("hi  ", "UNICEF  ","UNICEF  "),
+                  left: 60,
+                  right: 60,
+                  child: scroll("International Union for the Conservation of Nature | ", "International Animal Rescue | ","Animal Welfare Institute "),
                 ),
                 Positioned( //button
                   top: 510,
-                  bottom: 210,
+                  bottom: 190,
                   left: 70,
                   right: 70,
                   child: SizedBox(

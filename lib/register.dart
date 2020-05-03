@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 import 'quiz.dart';
-import 'register.dart';
+import 'login.dart';
+import 'auth.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPage createState() => _LoginPage();
+  _RegisterPage createState() => _RegisterPage();
 }
 
-class _LoginPage extends State<LoginPage> {
-  // text field state
+class _RegisterPage extends State<RegisterPage> {
   String email = '';
   String password = '';
-
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -42,7 +42,7 @@ class _LoginPage extends State<LoginPage> {
                 margin: EdgeInsets.fromLTRB(18, 0, 5, 0),
                 padding: EdgeInsets.all(10),
                 alignment: Alignment.centerLeft,
-                child: Text("Sign In",style:  GoogleFonts.ebGaramond(
+                child: Text("Create an Account",style:  GoogleFonts.ebGaramond(
                   color: Color(0xFF0000A1),
                   fontSize: 30.0,
                   fontWeight: FontWeight.w800,
@@ -63,7 +63,7 @@ class _LoginPage extends State<LoginPage> {
                         )
                       ]
                   ),
-                  child: Column( //email
+                  child: Column(
                     children: <Widget>[
                       Container(
                         child: Container(
@@ -84,7 +84,7 @@ class _LoginPage extends State<LoginPage> {
                         ),
                       ),
 
-                      Container( //password
+                      Container(
                         padding: EdgeInsets.all(8.0),
                         child: TextField(
                           decoration: InputDecoration(
@@ -113,14 +113,15 @@ class _LoginPage extends State<LoginPage> {
                     fontSize: 30.0,
                     fontWeight: FontWeight.w800,
                   )),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                          builder: (BuildContext context) => QuizPage()
-                      ),
-                    );
-                  },
+                    onPressed: () async {
+                      dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                            builder: (BuildContext context) => QuizPage()
+                        ),
+                      );
+                    }
                 )
               ),
               Container(
@@ -128,7 +129,7 @@ class _LoginPage extends State<LoginPage> {
                   color: Colors.transparent,
                   //                elevation: 10.0,
                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(40.0)),
-                  child: Text("Create an Account",style:  GoogleFonts.ebGaramond(
+                  child: Text("Sign in",style:  GoogleFonts.ebGaramond(
                     color: Colors.grey,
                     fontSize: 20.0,
                     fontWeight: FontWeight.w800,
@@ -137,7 +138,7 @@ class _LoginPage extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute<void>(
-                          builder: (BuildContext context) => RegisterPage()
+                          builder: (BuildContext context) => LoginPage()
                       ),
                     );
                   },
