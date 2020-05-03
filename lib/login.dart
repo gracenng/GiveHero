@@ -16,7 +16,8 @@ class _LoginPage extends State<LoginPage> {
     ));
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
+      body: SingleChildScrollView(
+        child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -30,7 +31,7 @@ class _LoginPage extends State<LoginPage> {
           children: <Widget>[
             Container(
               width: 50,
-              height: 250,
+              height: 350,
             ),
             Container(
               margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
@@ -90,8 +91,9 @@ class _LoginPage extends State<LoginPage> {
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "Password",
-                            hintStyle: TextStyle(color: Colors.grey[500])
+                            hintStyle: TextStyle(color: Colors.grey[500]),
                         ),
+                        obscureText: true,
                       ),
                     )
                   ],
@@ -121,7 +123,7 @@ class _LoginPage extends State<LoginPage> {
             ),
           ],
         )
-      )
+      ),)
     );
   }
 }

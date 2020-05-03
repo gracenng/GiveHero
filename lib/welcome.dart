@@ -9,6 +9,53 @@ class WelcomePage extends StatefulWidget {
   _WelcomePage createState() => _WelcomePage();
 }
 class _WelcomePage extends State<WelcomePage> {
+  SizedBox scroll (String text1, String text2,String text3){
+    return SizedBox(
+        width:500,
+        height: 100,
+        child: ListView(
+          // This next line does the trick.
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            Container(
+              child: Text(text1,
+                  style: GoogleFonts.ebGaramond(
+                    color: Color(0xFFF8E6C5),
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w700,
+                  )),
+            ),
+            SizedBox(width: 30,),
+            Container(
+              child: Text(text2,
+                  style: GoogleFonts.ebGaramond(
+                    color: Color(0xFF0000A1) ,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w700,
+                  )),
+            ),
+            Container(
+              child: Text(text3,
+                  style: GoogleFonts.ebGaramond(
+                    color: Color(0xFF0000A1),
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w700,
+                  )),
+            ),
+            Container(
+              child: Text("UNICEF ",
+                  style: GoogleFonts.ebGaramond(
+                    color: Color(0xFF0000A1),
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w700,
+                  )),
+            ),
+          ],
+        ),
+      );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -31,8 +78,36 @@ class _WelcomePage extends State<WelcomePage> {
                   ),
                 ),
                 Positioned(
-                  top: 520,
-                  bottom: 190,
+                  top: 280,
+                  bottom: 390,
+                  left: 70,
+                  right: 70,
+                  child: scroll("UNICEF  ", "UNICEF  ","UNICEF  "),
+                ),
+                Positioned(
+                  top: 330,
+                  bottom: 340,
+                  left: 70,
+                  right: 70,
+                  child: scroll("UNICEF  ", "UNICEF  ","UNICEF  "),
+                ),
+                Positioned(
+                  top: 380,
+                  bottom: 290,
+                  left: 70,
+                  right: 70,
+                  child: scroll("UNICEF  ", "UNICEF  ","UNICEF  "),
+                ),
+                Positioned(
+                  top: 430,
+                  bottom: 240,
+                  left: 70,
+                  right: 70,
+                  child: scroll("hi  ", "UNICEF  ","UNICEF  "),
+                ),
+                Positioned( //button
+                  top: 510,
+                  bottom: 210,
                   left: 70,
                   right: 70,
                   child: SizedBox(

@@ -17,7 +17,7 @@ class _QuizPage extends State<QuizPage> {
       child: RaisedButton(
         color: buttonColor,
         elevation: 26.0,
-        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(100.0)),
         child: Text(header,style:  GoogleFonts.ebGaramond(
           color: Color(0xFF0000A1),
           fontSize: 20.0,
@@ -38,55 +38,28 @@ class _QuizPage extends State<QuizPage> {
     ));
     Color buttonColor = Colors.white;
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xFF0000A1) ,
-          title: Text("GiveHero",
-            style: GoogleFonts.ebGaramond(
-            color: Color(0xFFF8E6C5),
-            fontSize: 25.0,
-            fontWeight: FontWeight.w700,
-          )),
-        ),
-        backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: Column(
+          child: Stack(
             children: <Widget>[
               Container(
-                  padding: EdgeInsets.fromLTRB(50, 80, 50, 10),
-                  child: Text("Choose from the list below 4 charitable causes that you care most about.",
-                    style: GoogleFonts.ebGaramond(
-                      color: Color(0xFF0000A1),
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.w700,
-                    )
+                height: 950,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("images/quiz.png"),
+                    alignment: Alignment.topCenter,
+                    fit: BoxFit.fill,
+                  ),
                 ),
+              ),
+              Container(
+
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[ //button list
-                  SizedBox(width:20, height: 50),
-                  option("COVID-19 Emergency Response"),
-                  option("Poverty"),
-                  option ("Animal welfare"),
-                  Container(
-                    width: 400,
-                    height: 50,
-                    child: RaisedButton(
-                      color: buttonColor,
-                      elevation: 26.0,
-                      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                      child: Text("TEST",style:  GoogleFonts.ebGaramond(
-                        color: Color(0xFF0000A1),
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w700,
-                      )),
-                      onPressed: () {
-                        setState(() {
-                          buttonColor = Color(0xFFF8E6C5);
-                        });
-                      },
-                    ),
-                 ),
+
+
                 ],
               )
             ],
