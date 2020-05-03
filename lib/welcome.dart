@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
-import 'login.dart';
+import 'register.dart';
 
 class WelcomePage extends StatefulWidget {
 
@@ -120,7 +120,7 @@ class _WelcomePage extends State<WelcomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute<void>(
-                              builder: (BuildContext context) => LoginPage()
+                              builder: (BuildContext context) => RegisterPage()
                           ),
                         );
                       },

@@ -25,8 +25,8 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
             ),
             Positioned(
-                top: 600,
-                bottom: 100,
+                top: 630,
+                bottom: 70,
                 left: 140,
                 right: 20,
                 child: OutlineButton(
